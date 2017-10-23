@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javaScript," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta name="keywords" content="javaScript">
+<meta name="description" content="css常见小问题">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
-<meta property="og:url" content="http://yoursite.com/2017/10/20/闭包/index.html">
+<meta property="og:title" content="几种css小问题">
+<meta property="og:url" content="http://yoursite.com/2017/10/23/几种三列布局方式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta property="og:updated_time" content="2017-10-20T12:18:33.000Z">
+<meta property="og:description" content="css常见小问题">
+<meta property="og:updated_time" content="2017-10-23T12:47:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
+<meta name="twitter:title" content="几种css小问题">
+<meta name="twitter:description" content="css常见小问题">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/20/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/23/几种三列布局方式/"/>
 
 
 
 
 
-  <title>闭包 | Hexo</title>
+  <title>几种css小问题 | Hexo</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/几种三列布局方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包</h1>
+          <h1 class="post-title" itemprop="name headline">几种css小问题</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T00:00:00+08:00">
-                2017-10-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-23T00:00:00+08:00">
+                2017-10-23
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -355,22 +355,12 @@
       
 
       
-        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><blockquote>
-<p><em><strong>闭包</strong></em>概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。<br><a id="more"></a></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatFunction</span>(<span class="params">propertyName</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1,object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="built_in">console</span>.log(value1);</div><div class="line">		<span class="built_in">console</span>.log(value2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>即使里面这个内部函数被返回了，而且被别的函数引用了，别人也可以引用propertyName.</code>至于为什么可以访问到，就必须首先理解执行环境和作用域链。</p>
-<h3 id="执行环境和作用域链"><a href="#执行环境和作用域链" class="headerlink" title="执行环境和作用域链"></a>执行环境和作用域链</h3><blockquote>
-<p>执行环境是JS中最为重要的的一个概念，执行环境定义了变量或函数有权访问的其他数据，决定了他们的行为。每个执行环境都有个与之关联的<strong>变量对象</strong>，环境中定义的所有函数和变量都保存在这个对象中。</p>
-<p>当代码在环境中执行时，会创建变量对象的一个<strong>作用域链</strong>。作用域链的作用是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链本质上就是一个指向变量对象的指针列表，只引用但不施加包含变量对象。</p>
-<p>当函数被调用时，会创建一个执行环境及相应的作用域链。然后，使用arguments和其他命名参数的值来初始化函数的活动对象。</p>
-</blockquote>
-<p>一般来说当一个函数被调用时，就会创建一个执行环境及相应的作用域链，但在作用域链中，外部函数的作用域始终处于第二位，外部的外部处于第三位。。。全局位于最后一位。</p>
-<p>但是闭包不同。当匿名函数从creatFunction()中被返回后，它的作用域链被初始化为包含creatFunction()函数的活动对象和全局变量对象。这样匿名函数就可以访问在creatFunction()中定义的所有变量。</p>
-<blockquote>
-<p><strong>重要的是，creatFunction()在执行完毕后，其活动对象不会被销毁，因为匿名函数的作用域链仍在引用这个活动对象。也就是说，creatFunction()返回后其执行环境的作用域链会被销毁，当活动对象仍然会留在内存中。直到匿名函数被销毁后，creatFunction()的活动对象才被销毁。</strong></p>
-</blockquote>
-
+        <h1 id="css常见小问题"><a href="#css常见小问题" class="headerlink" title="css常见小问题"></a>css常见小问题</h1><a id="more"></a>
+<h2 id="1、height-100-不起作用。"><a href="#1、height-100-不起作用。" class="headerlink" title="1、height:100%不起作用。"></a>1、height:100%不起作用。</h2><p>当设置一个元素的高度为100%，本来期望能撑起浏览器窗口的高度的，当发现不起作用。因为当设一个元素高度100%的时候没有设置父元素的高度，父元素高度缺省：height: auto;当你要求浏览器根据这样一个缺省值来计算百分比高度时，只能得到undefined的结果。也就是一个null值，浏览器不会对这个值有任何的反应。所以给了这个div的高度为100%，它有两个父元素\<body\>和\<html\>。为了让你的div的百分比高度能起作用，你必须设定\<body\>和\<html\>的高度。</html\></body\></html\></body\></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">        这样这个div的高度就会100%了</div><div class="line">      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="2、margin负值"><a href="#2、margin负值" class="headerlink" title="2、margin负值"></a>2、margin负值</h2><h2 id="3、vertical-align一大堆乱七八糟的属性。"><a href="#3、vertical-align一大堆乱七八糟的属性。" class="headerlink" title="3、vertical-align一大堆乱七八糟的属性。"></a>3、vertical-align一大堆乱七八糟的属性。</h2><p>vertical-align就是垂直对齐的意思。</p>
+<h2 id="4、float破坏性"><a href="#4、float破坏性" class="headerlink" title="4、float破坏性"></a>4、float破坏性</h2><p>目前流行采用浮动方法实现的无论是分栏布局，还是列表排列我们都可以用其他一些CSS属性（不考虑table）代替实现，唯一一个实现不了的就是“文字环绕图片”，我是想不出来能有什么方法可以让文字环绕图片显示。好，这个替代不了的作用才是float真正的意义所在。<strong>浮动出现的意义其实只是用来让文字环绕图片而已，仅此而已</strong>。而我们目前用浮动实现页面布局本不是浮动该干的事情。<strong>浮动就是个带有方位的<br>display:inline-block属性。</strong><br>与浮动元素一样，绝对定位元素也具有“包裹性”，此“包裹性”适用于任何元素。那么，浮动元素与绝对定位元素的差别在哪里呢？我觉得最主要的差别在于：绝对定位的元素脱离了文档流，而浮动元素依旧在文档流中；而这造成的显示上的差异就是：同处于文档流中的文字实体不会与浮动元素重叠，而会与绝对定位元素重叠。</p>
+<h2 id="5、inline-block"><a href="#5、inline-block" class="headerlink" title="5、inline-block"></a>5、inline-block</h2>
       
     </div>
     
@@ -387,7 +377,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -400,15 +390,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/10/22/原型链/" rel="next" title="原型链">
+                <i class="fa fa-chevron-left"></i> 原型链
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/22/原型链/" rel="prev" title="原型链">
-                原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -542,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行环境和作用域链"><span class="nav-number">1.0.1.</span> <span class="nav-text">执行环境和作用域链</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css常见小问题"><span class="nav-number">1.</span> <span class="nav-text">css常见小问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、height-100-不起作用。"><span class="nav-number">1.1.</span> <span class="nav-text">1、height:100%不起作用。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、margin负值"><span class="nav-number">1.2.</span> <span class="nav-text">2、margin负值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、vertical-align一大堆乱七八糟的属性。"><span class="nav-number">1.3.</span> <span class="nav-text">3、vertical-align一大堆乱七八糟的属性。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、float破坏性"><span class="nav-number">1.4.</span> <span class="nav-text">4、float破坏性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、inline-block"><span class="nav-number">1.5.</span> <span class="nav-text">5、inline-block</span></a></li></ol></li></ol></div>
             
 
           </div>
