@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javaScript," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta name="keywords" content="javaScript">
+<meta name="description" content="Flex布局">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
-<meta property="og:url" content="http://yoursite.com/2017/10/20/闭包/index.html">
+<meta property="og:title" content="flex布局">
+<meta property="og:url" content="http://yoursite.com/2017/10/25/flex布局/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta property="og:updated_time" content="2017-10-20T12:18:33.000Z">
+<meta property="og:description" content="Flex布局">
+<meta property="og:updated_time" content="2017-10-24T13:46:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
+<meta name="twitter:title" content="flex布局">
+<meta name="twitter:description" content="Flex布局">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/20/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/25/flex布局/"/>
 
 
 
 
 
-  <title>闭包 | Hexo</title>
+  <title>flex布局 | Hexo</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/25/flex布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包</h1>
+          <h1 class="post-title" itemprop="name headline">flex布局</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T00:00:00+08:00">
-                2017-10-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-25T00:00:00+08:00">
+                2017-10-25
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -355,22 +355,7 @@
       
 
       
-        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><blockquote>
-<p><em><strong>闭包</strong></em>概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。<br><a id="more"></a></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatFunction</span>(<span class="params">propertyName</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1,object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="built_in">console</span>.log(value1);</div><div class="line">		<span class="built_in">console</span>.log(value2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>即使里面这个内部函数被返回了，而且被别的函数引用了，别人也可以引用propertyName.</code>至于为什么可以访问到，就必须首先理解执行环境和作用域链。</p>
-<h3 id="执行环境和作用域链"><a href="#执行环境和作用域链" class="headerlink" title="执行环境和作用域链"></a>执行环境和作用域链</h3><blockquote>
-<p>执行环境是JS中最为重要的的一个概念，执行环境定义了变量或函数有权访问的其他数据，决定了他们的行为。每个执行环境都有个与之关联的<strong>变量对象</strong>，环境中定义的所有函数和变量都保存在这个对象中。</p>
-<p>当代码在环境中执行时，会创建变量对象的一个<strong>作用域链</strong>。作用域链的作用是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链本质上就是一个指向变量对象的指针列表，只引用但不施加包含变量对象。</p>
-<p>当函数被调用时，会创建一个执行环境及相应的作用域链。然后，使用arguments和其他命名参数的值来初始化函数的活动对象。</p>
-</blockquote>
-<p>一般来说当一个函数被调用时，就会创建一个执行环境及相应的作用域链，但在作用域链中，外部函数的作用域始终处于第二位，外部的外部处于第三位。。。全局位于最后一位。</p>
-<p>但是闭包不同。当匿名函数从creatFunction()中被返回后，它的作用域链被初始化为包含creatFunction()函数的活动对象和全局变量对象。这样匿名函数就可以访问在creatFunction()中定义的所有变量。</p>
-<blockquote>
-<p><strong>重要的是，creatFunction()在执行完毕后，其活动对象不会被销毁，因为匿名函数的作用域链仍在引用这个活动对象。也就是说，creatFunction()返回后其执行环境的作用域链会被销毁，当活动对象仍然会留在内存中。直到匿名函数被销毁后，creatFunction()的活动对象才被销毁。</strong></p>
-</blockquote>
-
+        <h1 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h1>
       
     </div>
     
@@ -387,7 +372,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -400,15 +385,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/10/24/三列布局/" rel="next" title="几种常见的三列布局">
+                <i class="fa fa-chevron-left"></i> 几种常见的三列布局
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/22/原型链/" rel="prev" title="原型链">
-                原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -542,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行环境和作用域链"><span class="nav-number">1.0.1.</span> <span class="nav-text">执行环境和作用域链</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flex布局"><span class="nav-number">1.</span> <span class="nav-text">Flex布局</span></a></li></ol></div>
             
 
           </div>
