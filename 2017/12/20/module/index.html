@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="javaScript," />
 
 
 
@@ -94,20 +94,17 @@
 
 
 
-<meta name="description" content="css常见小问题">
-<meta name="keywords" content="CSS">
+<meta name="description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
+<meta name="keywords" content="javaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="几种css小问题">
-<meta property="og:url" content="http://yoursite.com/2017/10/23/几种三列布局方式/index.html">
+<meta property="og:title" content="ES6之module">
+<meta property="og:url" content="http://yoursite.com/2017/12/20/module/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="css常见小问题">
-<meta property="og:image" content="http://oy4etwyhs.bkt.clouddn.com/17-10-24/89970590.jpg">
-<meta property="og:image" content="http://oy4etwyhs.bkt.clouddn.com/17-10-24/99752474.jpg">
-<meta property="og:updated_time" content="2017-10-24T12:47:58.000Z">
+<meta property="og:description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
+<meta property="og:updated_time" content="2017-12-21T11:56:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="几种css小问题">
-<meta name="twitter:description" content="css常见小问题">
-<meta name="twitter:image" content="http://oy4etwyhs.bkt.clouddn.com/17-10-24/89970590.jpg">
+<meta name="twitter:title" content="ES6之module">
+<meta name="twitter:description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
 
 
 
@@ -136,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/23/几种三列布局方式/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/20/module/"/>
 
 
 
 
 
-  <title>几种css小问题 | Hexo</title>
+  <title>ES6之module | Hexo</title>
   
 
 
@@ -269,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/几种三列布局方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/20/module/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -286,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">几种css小问题</h1>
+          <h1 class="post-title" itemprop="name headline">ES6之module</h1>
         
 
         <div class="post-meta">
@@ -298,8 +295,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-23T00:00:00+08:00">
-                2017-10-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T00:00:00+08:00">
+                2017-12-20
               </time>
             
 
@@ -321,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
                   </a>
                 </span>
 
@@ -358,15 +355,21 @@
       
 
       
-        <h1 id="css常见小问题"><a href="#css常见小问题" class="headerlink" title="css常见小问题"></a>css常见小问题</h1><a id="more"></a>
-<h2 id="1、height-100-不起作用。"><a href="#1、height-100-不起作用。" class="headerlink" title="1、height:100%不起作用。"></a>1、height:100%不起作用。</h2><p>当设置一个元素的高度为100%，本来期望能撑起浏览器窗口的高度的，当发现不起作用。因为当设一个元素高度100%的时候没有设置父元素的高度，父元素高度缺省：height: auto;当你要求浏览器根据这样一个缺省值来计算百分比高度时，只能得到undefined的结果。也就是一个null值，浏览器不会对这个值有任何的反应。所以给了这个div的高度为100%，它有两个父元素\<body\>和\<html\>。为了让你的div的百分比高度能起作用，你必须设定\<body\>和\<html\>的高度。</html\></body\></html\></body\></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">        这样这个div的高度就会100%了</div><div class="line">      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="2、vertical-align一大堆乱七八糟的属性。"><a href="#2、vertical-align一大堆乱七八糟的属性。" class="headerlink" title="2、vertical-align一大堆乱七八糟的属性。"></a>2、vertical-align一大堆乱七八糟的属性。</h2><p>vertical-align就是垂直对齐的意思。</p>
-<h2 id="3、float破坏性"><a href="#3、float破坏性" class="headerlink" title="3、float破坏性"></a>3、float破坏性</h2><p>目前流行采用浮动方法实现的无论是分栏布局，还是列表排列我们都可以用其他一些CSS属性（不考虑table）代替实现，唯一一个实现不了的就是“文字环绕图片”，我是想不出来能有什么方法可以让文字环绕图片显示。好，这个替代不了的作用才是float真正的意义所在。<strong>浮动出现的意义其实只是用来让文字环绕图片而已，仅此而已</strong>。而我们目前用浮动实现页面布局本不是浮动该干的事情。<strong>浮动就是个带有方位的<br>display:inline-block属性。</strong><br>与浮动元素一样，绝对定位元素也具有“包裹性”，此“包裹性”适用于任何元素。那么，浮动元素与绝对定位元素的差别在哪里呢？我觉得最主要的差别在于：绝对定位的元素脱离了文档流，而浮动元素依旧在文档流中；而这造成的显示上的差异就是：同处于文档流中的文字实体不会与浮动元素重叠，而会与绝对定位元素重叠。</p>
-<h2 id="4、inline-block"><a href="#4、inline-block" class="headerlink" title="4、inline-block"></a>4、inline-block</h2><p>display:inline-block感觉与display:table-cell有些相似，例如对内部元素的包裹性。但是，由于display:inline-block最大的不同就是其没有父元素的匿名包裹特性，这使得display:inline-block属性的使用非常自由，可与文字，图片混排，可内嵌block属性元素，可以可以置身于inline水平的元素中。<br>inline-block属性的元素适用于inline box模型，所以，当其中的列表元素高度不一时，是不会有错位的。关于line box模型，一言以蔽之，就是每一行所有的inline元素和inline-block元素会共同形成一个line boxes，这个line box的高度由里面最高的元素决定。所以，即使inline-block属性的列表元素高度异常，撑开的是整个line boxes的高度，因而，不会与下一行的列表元素发生错位。<br><img src="http://oy4etwyhs.bkt.clouddn.com/17-10-24/89970590.jpg" alt=""></p>
-<p>inline-block元素间的换行符空格间隙问题：真正的inline-block元素，就像个图片一样。例如，两个不在一行的img标签，形成的两个图片之间就会有间隙，如下图所示：<br><img src="http://oy4etwyhs.bkt.clouddn.com/17-10-24/99752474.jpg" alt=""><br>我们只要细细想想，空格符本质上就是个字符，与a,b,c,d这些字符是个同一个属性的东西，只是他是空格，透明的看不见而已（但可以选中）。所以，只要我们使用让文字宽度为0的那些方法，不就可以解决inline-block元素间换行符间隙的问题啦！</p>
-<p>于是，很自然而然的，想到了以下样式：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attribute">font-size</span>:<span class="number">0</span>;&#125;</div></pre></td></tr></table></figure>
+        <p>JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。<br>ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。<br><a id="more"></a></p>
+<h2 id="ES6-模块与-CommonJS-模块的差异"><a href="#ES6-模块与-CommonJS-模块的差异" class="headerlink" title="ES6 模块与 CommonJS 模块的差异"></a>ES6 模块与 CommonJS 模块的差异</h2><h3 id="CommonJS-模块是运行时加载，ES6-模块是编译时输出接口"><a href="#CommonJS-模块是运行时加载，ES6-模块是编译时输出接口" class="headerlink" title="CommonJS 模块是运行时加载，ES6 模块是编译时输出接口"></a>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</h3><p>require是CommonJS语法的内容。下面举例，require的用法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  counter: counter,</div><div class="line">  incCounter: incCounter,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// CommonJS模块</span></div><div class="line"><span class="keyword">let</span> &#123; stat, exists, readFile &#125; = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="keyword">let</span> _fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">let</span> stat = _fs.stat;</div><div class="line"><span class="keyword">let</span> exists = _fs.exists;</div><div class="line"><span class="keyword">let</span> readfile = _fs.readfile;</div></pre></td></tr></table></figure>
+<p>上面代码的实质是整体加载<code>fs</code>模块（即加载<code>fs</code>的所有方法），生成一个对象（<code>_fs</code>），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。  </p>
+<p>ES6 模块不是对象，而是通过<code>export</code>命令显式指定输出的代码，再通过<code>import</code>命令输入。</p>
+<p>即 ES6 可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。</p>
+<h3 id="CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。"><a href="#CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。" class="headerlink" title="CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。"></a>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</h3><p>CommonJS 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。请看下面这个模块文件<code>lib.js</code>的例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  counter: counter,</div><div class="line">  incCounter: incCounter,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>上面代码输出内部变量<code>counter</code>和改写这个变量的内部方法<code>incCounter</code>。然后，在<code>main.js</code>里面加载这个模块。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">var</span> mod = <span class="built_in">require</span>(<span class="string">'./lib'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(mod.counter);  <span class="comment">// 3</span></div><div class="line">mod.incCounter();</div><div class="line"><span class="built_in">console</span>.log(mod.counter); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
+<p>上面代码说明，<code>lib.js</code>模块加载以后，它的内部变化就影响不到输出的<code>mod.counter</code>了。</p>
+<p>ES6 的<code>import</code>有点像 <code>Unix</code> 系统的“符号连接”，原始值变了，<code>import</code>加载的值也会跟着变。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">let</span> counter = <span class="number">3</span>;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">import</span> &#123; counter, incCounter &#125; <span class="keyword">from</span> <span class="string">'./lib'</span>;</div><div class="line"><span class="built_in">console</span>.log(counter); <span class="comment">// 3</span></div><div class="line">incCounter();</div><div class="line"><span class="built_in">console</span>.log(counter); <span class="comment">// 4</span></div></pre></td></tr></table></figure>
+<p>上面代码说明，<code>ES6</code> 模块输入的变量<code>counter</code>是活的，完全反应其所在模块<code>lib.js</code>内部的变化。</p>
 
       
     </div>
@@ -384,7 +387,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
           
         </div>
       
@@ -397,8 +400,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/22/原型链/" rel="next" title="原型链">
-                <i class="fa fa-chevron-left"></i> 原型链
+              <a href="/2017/10/25/flex布局/" rel="next" title="flex布局">
+                <i class="fa fa-chevron-left"></i> flex布局
               </a>
             
           </div>
@@ -406,10 +409,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/24/三列布局/" rel="prev" title="几种常见的三列布局">
-                几种常见的三列布局 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css常见小问题"><span class="nav-number">1.</span> <span class="nav-text">css常见小问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、height-100-不起作用。"><span class="nav-number">1.1.</span> <span class="nav-text">1、height:100%不起作用。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、vertical-align一大堆乱七八糟的属性。"><span class="nav-number">1.2.</span> <span class="nav-text">2、vertical-align一大堆乱七八糟的属性。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、float破坏性"><span class="nav-number">1.3.</span> <span class="nav-text">3、float破坏性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、inline-block"><span class="nav-number">1.4.</span> <span class="nav-text">4、inline-block</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-模块与-CommonJS-模块的差异"><span class="nav-number">1.</span> <span class="nav-text">ES6 模块与 CommonJS 模块的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS-模块是运行时加载，ES6-模块是编译时输出接口"><span class="nav-number">1.1.</span> <span class="nav-text">CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。"><span class="nav-number">1.2.</span> <span class="nav-text">CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</span></a></li></ol></li></ol></div>
             
 
           </div>
