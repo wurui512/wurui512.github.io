@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javaScript," />
+  <meta name="keywords" content="js," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta name="keywords" content="javaScript">
+<meta name="description" content="平时的一些总结">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
-<meta property="og:url" content="http://yoursite.com/2017/10/20/闭包/index.html">
+<meta property="og:title" content="js相关总结">
+<meta property="og:url" content="http://yoursite.com/2018/01/24/js相关/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta property="og:updated_time" content="2017-10-20T12:18:33.000Z">
+<meta property="og:description" content="平时的一些总结">
+<meta property="og:updated_time" content="2018-02-24T13:21:08.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
+<meta name="twitter:title" content="js相关总结">
+<meta name="twitter:description" content="平时的一些总结">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/20/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/24/js相关/"/>
 
 
 
 
 
-  <title>闭包 | Hexo</title>
+  <title>js相关总结 | Hexo</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/24/js相关/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包</h1>
+          <h1 class="post-title" itemprop="name headline">js相关总结</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T00:00:00+08:00">
-                2017-10-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T00:00:00+08:00">
+                2018-01-24
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
                   </a>
                 </span>
 
@@ -355,21 +355,14 @@
       
 
       
-        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><blockquote>
-<p><em><strong>闭包</strong></em>概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。<br><a id="more"></a></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatFunction</span>(<span class="params">propertyName</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1,object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="built_in">console</span>.log(value1);</div><div class="line">		<span class="built_in">console</span>.log(value2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>即使里面这个内部函数被返回了，而且被别的函数引用了，别人也可以引用propertyName.</code>至于为什么可以访问到，就必须首先理解执行环境和作用域链。</p>
-<h3 id="执行环境和作用域链"><a href="#执行环境和作用域链" class="headerlink" title="执行环境和作用域链"></a>执行环境和作用域链</h3><blockquote>
-<p>执行环境是JS中最为重要的的一个概念，执行环境定义了变量或函数有权访问的其他数据，决定了他们的行为。每个执行环境都有个与之关联的<strong>变量对象</strong>，环境中定义的所有函数和变量都保存在这个对象中。</p>
-<p>当代码在环境中执行时，会创建变量对象的一个<strong>作用域链</strong>。作用域链的作用是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链本质上就是一个指向变量对象的指针列表，只引用但不施加包含变量对象。</p>
-<p>当函数被调用时，会创建一个执行环境及相应的作用域链。然后，使用arguments和其他命名参数的值来初始化函数的活动对象。</p>
-</blockquote>
-<p>一般来说当一个函数被调用时，就会创建一个执行环境及相应的作用域链，但在作用域链中，外部函数的作用域始终处于第二位，外部的外部处于第三位。。。全局位于最后一位。</p>
-<p>但是闭包不同。当匿名函数从creatFunction()中被返回后，它的作用域链被初始化为包含creatFunction()函数的活动对象和全局变量对象。这样匿名函数就可以访问在creatFunction()中定义的所有变量。</p>
-<blockquote>
-<p><strong>重要的是，creatFunction()在执行完毕后，其活动对象不会被销毁，因为匿名函数的作用域链仍在引用这个活动对象。也就是说，creatFunction()返回后其执行环境的作用域链会被销毁，当活动对象仍然会留在内存中。直到匿名函数被销毁后，creatFunction()的活动对象才被销毁。</strong></p>
-</blockquote>
+        <p>平时的一些总结</p>
+<a id="more"></a>
+<h1 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h1><p>事件代理就是利用事件冒泡，就是用一个事件处理程序来管理一类事件。因为在js中添加在页面中的事件处理程序数量将直接影响页面的整体性能。如果用事件委托，那么与dom的操作只需要交互一次，就大大减少了与dom的交互次数，提高性能。</p>
+<h1 id="JS中的this是怎么工作的"><a href="#JS中的this是怎么工作的" class="headerlink" title="JS中的this是怎么工作的"></a>JS中的this是怎么工作的</h1><p>this表示函数作用域的上下文，指向函数运行时所在的对象，即调用它的对象。</p>
+<h1 id="JS原型继承的原理"><a href="#JS原型继承的原理" class="headerlink" title="JS原型继承的原理"></a>JS原型继承的原理</h1><p>Js的继承主要依靠<code>__proto__</code>，每个对象都有<code>__proto__</code>这个属性，实例的<code>__proto__</code>指向其构造函数的原型对象。当js引擎查找对象属性时先在自身上找，没有的话在其原型链上找，即在构造函数的原型对象上找。每个函数对象都由<code>prototype</code>属性，这个属性指向函数的原型对象。</p>
+<h1 id="commonJS和AMD-CMD"><a href="#commonJS和AMD-CMD" class="headerlink" title="commonJS和AMD/CMD"></a>commonJS和AMD/CMD</h1><p>js模块化的三个规范：<code>CommonJS</code>，<code>AMD</code>，<code>CMD</code>。<br>CommonJS定义的模块分为：<code>require</code>、<code>export</code>、<code>module</code>. 但<code>require</code>加载模块是同步的，必须等模块加载出来才能执行后面的操作，这在服务器端是完全可行的，因为所有模块都存在本地硬盘，可以同步加载完成，加载时间是硬盘读取时间。但在浏览器端，因为模块都存在服务器，加载时间取决于网速，可能要等很长时间，浏览器会处于“假死”状态。<br>于是就诞生了<code>AMD</code>（异步模块定义），采用异步加载模块，模块加载不影响后面语句的运行，所有依赖这个模块的语句都放在回调函数中。AMD也采用<code>require()</code>，但不同于<code>CommonJS</code>，它采用<code>require([module], callback)</code>;相比于<code>CommonJS</code>，适合浏览器端。</p>
+<h1 id="null、undefined、undeclared的区别，怎么检测"><a href="#null、undefined、undeclared的区别，怎么检测" class="headerlink" title="null、undefined、undeclared的区别，怎么检测"></a>null、undefined、undeclared的区别，怎么检测</h1><p><code>Undeclared</code>是js语法错误，表示变量没有声明，js无法找到对应的上下文。<br><code>Undefined</code>表示一个变量没有被声明，或者被声明了没有被赋值。如果一个函数没有返回任何值则默认返回undefined。<br><code>Null</code>是一个表示“没有值”的值。<br><code>null</code>可以自动转为0，undefined转换成数值是NaN。<br><code>undefined</code>不是一个有效的json，而<code>null</code>是。<br><code>undefined</code>的<code>typeof</code>是undefined。<code>null</code>的<code>typeof</code>是object。<br>判断一个变量是否是<code>undefined</code>：<code>typeof variable ===”undefined”。</code><br>判断一个变量是否是<code>null</code>：<code>variable === null</code></p>
+<h1 id="什么是闭包，如何使用，为什么要使用？"><a href="#什么是闭包，如何使用，为什么要使用？" class="headerlink" title="什么是闭包，如何使用，为什么要使用？"></a>什么是闭包，如何使用，为什么要使用？</h1><p>闭包是指有权访问另一个函数作用域中的变量的函数。<br>创建闭包的方式是在一个函数内返回另一个函数。<br>闭包的作用：1、可以读取函数内部的变量。2、让变量的值始终保存在内存中，不会被自动清除。</p>
 
       
     </div>
@@ -387,7 +380,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -400,14 +393,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/12/20/module/" rel="next" title="ES6之module">
+                <i class="fa fa-chevron-left"></i> ES6之module
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/22/原型链/" rel="prev" title="原型链">
-                原型链 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/24/css相关总结/" rel="prev" title="css相关总结">
+                css相关总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -542,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行环境和作用域链"><span class="nav-number">1.0.1.</span> <span class="nav-text">执行环境和作用域链</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件代理"><span class="nav-number">1.</span> <span class="nav-text">事件代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS中的this是怎么工作的"><span class="nav-number">2.</span> <span class="nav-text">JS中的this是怎么工作的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS原型继承的原理"><span class="nav-number">3.</span> <span class="nav-text">JS原型继承的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commonJS和AMD-CMD"><span class="nav-number">4.</span> <span class="nav-text">commonJS和AMD/CMD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null、undefined、undeclared的区别，怎么检测"><span class="nav-number">5.</span> <span class="nav-text">null、undefined、undeclared的区别，怎么检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是闭包，如何使用，为什么要使用？"><span class="nav-number">6.</span> <span class="nav-text">什么是闭包，如何使用，为什么要使用？</span></a></li></ol></div>
             
 
           </div>

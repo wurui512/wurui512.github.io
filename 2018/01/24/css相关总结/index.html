@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javaScript," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta name="keywords" content="javaScript">
+<meta name="description" content="平时的一些总结">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
-<meta property="og:url" content="http://yoursite.com/2017/10/20/闭包/index.html">
+<meta property="og:title" content="css相关总结">
+<meta property="og:url" content="http://yoursite.com/2018/01/24/css相关总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
-<meta property="og:updated_time" content="2017-10-20T12:18:33.000Z">
+<meta property="og:description" content="平时的一些总结">
+<meta property="og:updated_time" content="2018-02-24T13:54:16.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="闭包 闭包概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。">
+<meta name="twitter:title" content="css相关总结">
+<meta name="twitter:description" content="平时的一些总结">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/20/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/01/24/css相关总结/"/>
 
 
 
 
 
-  <title>闭包 | Hexo</title>
+  <title>css相关总结 | Hexo</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/20/闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/24/css相关总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包</h1>
+          <h1 class="post-title" itemprop="name headline">css相关总结</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T00:00:00+08:00">
-                2017-10-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T00:00:00+08:00">
+                2018-01-24
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -355,21 +355,20 @@
       
 
       
-        <h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><blockquote>
-<p><em><strong>闭包</strong></em>概念：闭包是指有权访问另一个函数作用域中的变量的函数。创建闭包的常见方式就是在一个函数内部创建另一个函数。<br><a id="more"></a></p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatFunction</span>(<span class="params">propertyName</span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">object1,object2</span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> value1 = object1[propertyName];</div><div class="line">		<span class="keyword">var</span> value2 = object2[propertyName];</div><div class="line">		<span class="built_in">console</span>.log(value1);</div><div class="line">		<span class="built_in">console</span>.log(value2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><code>即使里面这个内部函数被返回了，而且被别的函数引用了，别人也可以引用propertyName.</code>至于为什么可以访问到，就必须首先理解执行环境和作用域链。</p>
-<h3 id="执行环境和作用域链"><a href="#执行环境和作用域链" class="headerlink" title="执行环境和作用域链"></a>执行环境和作用域链</h3><blockquote>
-<p>执行环境是JS中最为重要的的一个概念，执行环境定义了变量或函数有权访问的其他数据，决定了他们的行为。每个执行环境都有个与之关联的<strong>变量对象</strong>，环境中定义的所有函数和变量都保存在这个对象中。</p>
-<p>当代码在环境中执行时，会创建变量对象的一个<strong>作用域链</strong>。作用域链的作用是保证对执行环境有权访问的所有变量和函数的有序访问。作用域链本质上就是一个指向变量对象的指针列表，只引用但不施加包含变量对象。</p>
-<p>当函数被调用时，会创建一个执行环境及相应的作用域链。然后，使用arguments和其他命名参数的值来初始化函数的活动对象。</p>
-</blockquote>
-<p>一般来说当一个函数被调用时，就会创建一个执行环境及相应的作用域链，但在作用域链中，外部函数的作用域始终处于第二位，外部的外部处于第三位。。。全局位于最后一位。</p>
-<p>但是闭包不同。当匿名函数从creatFunction()中被返回后，它的作用域链被初始化为包含creatFunction()函数的活动对象和全局变量对象。这样匿名函数就可以访问在creatFunction()中定义的所有变量。</p>
-<blockquote>
-<p><strong>重要的是，creatFunction()在执行完毕后，其活动对象不会被销毁，因为匿名函数的作用域链仍在引用这个活动对象。也就是说，creatFunction()返回后其执行环境的作用域链会被销毁，当活动对象仍然会留在内存中。直到匿名函数被销毁后，creatFunction()的活动对象才被销毁。</strong></p>
-</blockquote>
+        <p>平时的一些总结</p>
+<a id="more"></a>
+<h1 id="CSS-中类-classes-和-ID-的区别"><a href="#CSS-中类-classes-和-ID-的区别" class="headerlink" title="CSS 中类 (classes) 和 ID 的区别"></a>CSS 中类 (classes) 和 ID 的区别</h1><p>一个元素只能有一个id属性，但可以有多个class属性；<br>id的样式优先级高于class；<br>id在文档中只能使用一次，class可以使用很多次；</p>
+<h1 id="“resetting”和“normalizing”css的区别"><a href="#“resetting”和“normalizing”css的区别" class="headerlink" title="“resetting”和“normalizing”css的区别"></a>“resetting”和“normalizing”css的区别</h1><p>为什么会有默认样式重置的出现？当我们没有给html元素设置样式时，浏览器会根据自己默认样式对html元素布局，但每个浏览器默认样式不同，就会导致同一个页面在不同浏览器上面显示不同。<br>Resetting是重新定义标签样式，来覆盖浏览器的默认属性<br>Normalizing 保护有用的浏览器默认设置而不是完全去掉他们</p>
+<p>二者区别：normalizing.css保护了有价值的默认值、修复了常见的移动端和桌面端浏览器的bug、不会让调试工具变得混乱。并且normalizing.css有详细的文档、是模块化的，可以很清楚的看到哪些部分被设置了特定的值，因此可以有选择性的移除掉一些永远不会用的部分。<br>reset和normalize如何选用？如果用到reset.css 要选择性的使用。<br>如使用normalizing.css可以把它当作自己项目的基础css，自定义样式值来<br>满足自己要求自己要求。</p>
+<h1 id="请解释浮动-Floats-及其工作原理。"><a href="#请解释浮动-Floats-及其工作原理。" class="headerlink" title="请解释浮动 (Floats) 及其工作原理。"></a>请解释浮动 (Floats) 及其工作原理。</h1><p>浮动元素会脱离标准文档流，浮动于标准文档流之上。<br>浮动的危害：会使父元素坍塌，因为父元素在高度计算的时候会忽略到浮动元素。<br>清除浮动的几种方法：<br>1、结尾处加空div标签clear：both。<br>2、父级div定义伪类:after和zoom。<br>3、父级div定义overflow：hidden。<br>4、BFC。<br>5、父级div也加个浮动  </p>
+<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><p>包括外边距、边框、内边距和元素内容。一般我们定义的都是元素内容的宽高。通常设置的背景显示区域是内容、内边距和边框这一块。外边距是透明的不会遮挡其他元素。<br>元素框的总宽度 = 元素（element）的width + padding的左边距和右边距的值 + margin的左边距和右边距的值 + border的左右宽度；<br>元素框的总高度 = 元素（element）的height + padding的上下边距的值 + margin的上下边距的值 ＋ border的上下宽度。<br>CSS外边距合并。<br>box-sizing 属性：content-box/border-box/inherit</p>
+<h1 id="伪元素和伪类"><a href="#伪元素和伪类" class="headerlink" title="伪元素和伪类"></a>伪元素和伪类</h1><p>伪元素：不是真正的页面元素，是由css样式展示的行为。如::before、::after、::first-line、:first-letter；其中::before和::after添加的内容默认是inline元素。伪元素不属于文档，所以js不能操作。<br>伪类：关于<code>&lt;a&gt;</code>，常见的有五个伪类:<code>link</code>、<code>:visited</code>、<code>:focus</code>、<code>:hover</code>、<code>:active</code>。UI元素伪类包括：<code>:enabled</code>、<code>:disabled</code>、<code>:checked</code>，主要针对form元素，IE8不支持。  </p>
+<h1 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h1><p><a href="https://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html" target="_blank" rel="external">https://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html</a><br>box formatting context(块级格式化上下文)：是一个独立的渲染区域，只有block-level box，规定了内部的block-level box如何布局，并且与外部无关<br>会生成BFC的元素:1、根元素。2、float属性不为none。3、position属性为absolute或fixed。4、display为inline-block,table-cell,table-caption,flex,inline-flex。5、overflow不为visible<br>BFC布局规则：<br>1、计算BFC高度时，浮动元素也会计算在内。（例如给父元素设overflow:hidden可以防止子元素是浮动布局撑不起父元素）<br>2、BFC区域不会与float box重叠（多栏布局的一种方式）<br>3、BFC就是页面上一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之也是。<br>4、box垂直方向的距离由margin决定，同一个BFC内的box的margin会发生重叠。（可以用新建BFC来防止margin重叠）</p>
+<h1 id="CSS-sprites"><a href="#CSS-sprites" class="headerlink" title="CSS sprites"></a>CSS sprites</h1><p>css sprites其实就是把网页中的一些图标整合到一张图片文件中，在利用css的<code>background-image</code> 、<code>background-repeat</code> 、<code>background-position</code>进行背景定位。</p>
+<h1 id="图片替换方法"><a href="#图片替换方法" class="headerlink" title="图片替换方法"></a>图片替换方法</h1><p><a href="http://blog.csdn.net/cwzhsi/article/details/46403077" target="_blank" rel="external">http://blog.csdn.net/cwzhsi/article/details/46403077</a></p>
+<p>图片替换方法主要是指将文字替换成图片的技术，即在html中使用文字，浏览器显示时用对应的图片显示。意义在于做网站优化，文字才是搜索引擎主要搜索对象。<br>1、FIR替换法。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"fir"</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">span</span>&gt;</span>Fahrner Image Replacement<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>把span标签里的文字<code>display：none</code>。指定h1 的背景图片。这个方法的问题在于一些流行的屏幕阅读器会忽略那些display为none或者visibility为hidden的元素，因此会完全忽略掉这个文本。且若关闭浏览器显示图片同时启用css支持时，文字图片都不显示。<br>2、phark。设置文字text-indent为很大的负值，把文字显示在屏幕以外。这个不会影响屏幕阅读器的使用。但若关闭浏览器显示图片同时启用css支持时，文字图片都不显示。<br>3、NIR。利用伪元素和伪元素产生的内容来实现图像替换（但ie有的版本不支持伪元素）。</p>
 
       
     </div>
@@ -387,7 +386,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
         </div>
       
@@ -400,15 +399,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/24/js相关/" rel="next" title="js相关总结">
+                <i class="fa fa-chevron-left"></i> js相关总结
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/22/原型链/" rel="prev" title="原型链">
-                原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -542,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#闭包"><span class="nav-number">1.</span> <span class="nav-text">闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#执行环境和作用域链"><span class="nav-number">1.0.1.</span> <span class="nav-text">执行环境和作用域链</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-中类-classes-和-ID-的区别"><span class="nav-number">1.</span> <span class="nav-text">CSS 中类 (classes) 和 ID 的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#“resetting”和“normalizing”css的区别"><span class="nav-number">2.</span> <span class="nav-text">“resetting”和“normalizing”css的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请解释浮动-Floats-及其工作原理。"><span class="nav-number">3.</span> <span class="nav-text">请解释浮动 (Floats) 及其工作原理。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#盒模型"><span class="nav-number">4.</span> <span class="nav-text">盒模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#伪元素和伪类"><span class="nav-number">5.</span> <span class="nav-text">伪元素和伪类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFC"><span class="nav-number">6.</span> <span class="nav-text">BFC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS-sprites"><span class="nav-number">7.</span> <span class="nav-text">CSS sprites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片替换方法"><span class="nav-number">8.</span> <span class="nav-text">图片替换方法</span></a></li></ol></div>
             
 
           </div>
