@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="javaScript," />
 
 
 
@@ -94,20 +94,17 @@
 
 
 
-<meta name="description" content="css常见小问题">
-<meta name="keywords" content="CSS">
+<meta name="description" content="Ajax技术的核心是XMLHttpRequest对象，简称XHR。XHR为向服务器发送请求和解析服务器响应提供了流畅的接口，能够以一步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能获得新数据。IE7+、Firefox、Opera、Chrome和Safari都支持原生XHR对象。">
+<meta name="keywords" content="javaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="几种css小问题">
-<meta property="og:url" content="http://yoursite.com/2017/10/23/几种三列布局方式/index.html">
+<meta property="og:title" content="Ajax与XHR对象">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/Ajax与XHR对象/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="css常见小问题">
-<meta property="og:image" content="http://oy4etwyhs.bkt.clouddn.com/17-10-24/89970590.jpg">
-<meta property="og:image" content="http://oy4etwyhs.bkt.clouddn.com/17-10-24/99752474.jpg">
-<meta property="og:updated_time" content="2017-10-24T12:47:58.000Z">
+<meta property="og:description" content="Ajax技术的核心是XMLHttpRequest对象，简称XHR。XHR为向服务器发送请求和解析服务器响应提供了流畅的接口，能够以一步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能获得新数据。IE7+、Firefox、Opera、Chrome和Safari都支持原生XHR对象。">
+<meta property="og:updated_time" content="2018-02-25T08:25:19.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="几种css小问题">
-<meta name="twitter:description" content="css常见小问题">
-<meta name="twitter:image" content="http://oy4etwyhs.bkt.clouddn.com/17-10-24/89970590.jpg">
+<meta name="twitter:title" content="Ajax与XHR对象">
+<meta name="twitter:description" content="Ajax技术的核心是XMLHttpRequest对象，简称XHR。XHR为向服务器发送请求和解析服务器响应提供了流畅的接口，能够以一步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能获得新数据。IE7+、Firefox、Opera、Chrome和Safari都支持原生XHR对象。">
 
 
 
@@ -136,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/23/几种三列布局方式/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/22/Ajax与XHR对象/"/>
 
 
 
 
 
-  <title>几种css小问题 | Hexo</title>
+  <title>Ajax与XHR对象 | Hexo</title>
   
 
 
@@ -269,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/23/几种三列布局方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/22/Ajax与XHR对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -286,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">几种css小问题</h1>
+          <h1 class="post-title" itemprop="name headline">Ajax与XHR对象</h1>
         
 
         <div class="post-meta">
@@ -298,8 +295,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-23T00:00:00+08:00">
-                2017-10-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-22T00:00:00+08:00">
+                2018-02-22
               </time>
             
 
@@ -321,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
                   </a>
                 </span>
 
@@ -358,15 +355,34 @@
       
 
       
-        <h1 id="css常见小问题"><a href="#css常见小问题" class="headerlink" title="css常见小问题"></a>css常见小问题</h1><a id="more"></a>
-<h2 id="1、height-100-不起作用。"><a href="#1、height-100-不起作用。" class="headerlink" title="1、height:100%不起作用。"></a>1、height:100%不起作用。</h2><p>当设置一个元素的高度为100%，本来期望能撑起浏览器窗口的高度的，当发现不起作用。因为当设一个元素高度100%的时候没有设置父元素的高度，父元素高度缺省：height: auto;当你要求浏览器根据这样一个缺省值来计算百分比高度时，只能得到undefined的结果。也就是一个null值，浏览器不会对这个值有任何的反应。所以给了这个div的高度为100%，它有两个父元素\<body\>和\<html\>。为了让你的div的百分比高度能起作用，你必须设定\<body\>和\<html\>的高度。</html\></body\></html\></body\></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"height: 100%;"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">        这样这个div的高度就会100%了</div><div class="line">      <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="2、vertical-align一大堆乱七八糟的属性。"><a href="#2、vertical-align一大堆乱七八糟的属性。" class="headerlink" title="2、vertical-align一大堆乱七八糟的属性。"></a>2、vertical-align一大堆乱七八糟的属性。</h2><p>vertical-align就是垂直对齐的意思。</p>
-<h2 id="3、float破坏性"><a href="#3、float破坏性" class="headerlink" title="3、float破坏性"></a>3、float破坏性</h2><p>目前流行采用浮动方法实现的无论是分栏布局，还是列表排列我们都可以用其他一些CSS属性（不考虑table）代替实现，唯一一个实现不了的就是“文字环绕图片”，我是想不出来能有什么方法可以让文字环绕图片显示。好，这个替代不了的作用才是float真正的意义所在。<strong>浮动出现的意义其实只是用来让文字环绕图片而已，仅此而已</strong>。而我们目前用浮动实现页面布局本不是浮动该干的事情。<strong>浮动就是个带有方位的<br>display:inline-block属性。</strong><br>与浮动元素一样，绝对定位元素也具有“包裹性”，此“包裹性”适用于任何元素。那么，浮动元素与绝对定位元素的差别在哪里呢？我觉得最主要的差别在于：绝对定位的元素脱离了文档流，而浮动元素依旧在文档流中；而这造成的显示上的差异就是：同处于文档流中的文字实体不会与浮动元素重叠，而会与绝对定位元素重叠。</p>
-<h2 id="4、inline-block"><a href="#4、inline-block" class="headerlink" title="4、inline-block"></a>4、inline-block</h2><p>display:inline-block感觉与display:table-cell有些相似，例如对内部元素的包裹性。但是，由于display:inline-block最大的不同就是其没有父元素的匿名包裹特性，这使得display:inline-block属性的使用非常自由，可与文字，图片混排，可内嵌block属性元素，可以可以置身于inline水平的元素中。<br>inline-block属性的元素适用于inline box模型，所以，当其中的列表元素高度不一时，是不会有错位的。关于line box模型，一言以蔽之，就是每一行所有的inline元素和inline-block元素会共同形成一个line boxes，这个line box的高度由里面最高的元素决定。所以，即使inline-block属性的列表元素高度异常，撑开的是整个line boxes的高度，因而，不会与下一行的列表元素发生错位。<br><img src="http://oy4etwyhs.bkt.clouddn.com/17-10-24/89970590.jpg" alt=""></p>
-<p>inline-block元素间的换行符空格间隙问题：真正的inline-block元素，就像个图片一样。例如，两个不在一行的img标签，形成的两个图片之间就会有间隙，如下图所示：<br><img src="http://oy4etwyhs.bkt.clouddn.com/17-10-24/99752474.jpg" alt=""><br>我们只要细细想想，空格符本质上就是个字符，与a,b,c,d这些字符是个同一个属性的东西，只是他是空格，透明的看不见而已（但可以选中）。所以，只要我们使用让文字宽度为0的那些方法，不就可以解决inline-block元素间换行符间隙的问题啦！</p>
-<p>于是，很自然而然的，想到了以下样式：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attribute">font-size</span>:<span class="number">0</span>;&#125;</div></pre></td></tr></table></figure>
+        <blockquote>
+<p>Ajax技术的核心是XMLHttpRequest对象，简称XHR。<br>XHR为向服务器发送请求和解析服务器响应提供了流畅的接口，能够以一步方式从服务器取得更多信息，意味着用户单击后，可以不必刷新页面也能获得新数据。<br>IE7+、Firefox、Opera、Chrome和Safari都支持原生XHR对象。  </p>
+</blockquote>
+<a id="more"></a>
+<p>创建一个XHR对象，也叫实例化一个XHR对象，因为XMLHTTPRequest()是一个构造函数。下面是创建XHR对象的兼容写法   </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr;</div><div class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</div><div class="line">    xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="XHR发送请求"><a href="#XHR发送请求" class="headerlink" title="XHR发送请求"></a>XHR发送请求</h1><p>在使用XHR对象时，要调用的第一个方法是open()，如下所示，该方法接受3个参数  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"get"</span>,<span class="string">"example.php"</span>, <span class="literal">false</span>);</div></pre></td></tr></table></figure>
+<p>open()方法的第二个参数是URL，该URL相对于执行代码的当前页面，且只能向同一个域中使用相同端口和协议的URL发送请求。如果URL与启动请求的页面有任何差别，都会引发安全错误<br>open()方法的第三个参数是表示是否异步发送请求的布尔值，如果不填写，默认为true，表示异步发送</p>
+<p>send()方法接收一个参数，即要作为请求主体发送的数据。调用send()方法后，请求被分派到服务器</p>
+<p>如果是GET方法，send()方法无参数，或参数为null；如果是POST方法，send()方法的参数为要发送的数据  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">xhr.open(<span class="string">"get"</span>, <span class="string">"example.txt"</span>, <span class="literal">false</span>);</div><div class="line">xhr.send(<span class="literal">null</span>);</div></pre></td></tr></table></figure>
+<h1 id="XHR接收响应"><a href="#XHR接收响应" class="headerlink" title="XHR接收响应"></a>XHR接收响应</h1><p>一个完整的HTTP响应由状态码、响应头集合和响应主体组成。在收到响应后，这些都可以通过XHR对象的属性和方法使用，主要有以下4个属性  </p>
+<blockquote>
+<p>responseText: 作为响应主体被返回的文本(文本形式)<br>responseXML: 如果响应的内容类型是’text/xml’或’application/xml’，这个属性中将保存着响应数据的XML DOM文档(document形式)<br>status: HTTP状态码(数字形式)<br>statusText: HTTP状态说明(文本形式)</p>
+</blockquote>
+<p>在接收到响应后，第一步是检查status属性，以确定响应已经成功返回。一般来说，可以将HTTP状态码为200作为成功的标志。此时，responseText属性的内容已经就绪，而且在内容类型正确的情况下，responseXML也可以访问了。此外，状态码为304表示请求的资源并没有被修改，可以直接使用浏览器中缓存的版本；当然，也意味着响应是有效的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((xhr.status &gt;=<span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>) || xhr.status == <span class="number">304</span>)&#123;</div><div class="line">    alert(xhr.responseText);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    alert(<span class="string">'request was unsuccessful:'</span> + xhr.status);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果需要接收的是异步响应，这就需要检测XHR对象的readyState属性，该属性表示请求/响应过程的当前活动阶段。这个属性可取的值如下：  </p>
+<blockquote>
+<p>0(UNSENT):未初始化。尚未调用open()方法<br>1(OPENED):启动。已经调用open()方法，但尚未调用send()方法<br>2(HEADERS_RECEIVED):发送。己经调用send()方法，且接收到头信息<br>3(LOADING):接收。已经接收到部分响应主体信息<br>4(DONE):完成。已经接收到全部响应数据，而且已经可以在客户端使用了  </p>
+</blockquote>
+<p>理论上，只要readyState属性值由一个值变成另一个值，都会触发一次readystatechange事件。可以利用这个事件来检测每次状态变化后readyState的值。通常，我们对readyState值为4的阶段感兴趣，因为这时所有数据都已就绪</p>
+<blockquote>
+<p>[注意]必须在调用open()之前指定onreadystatechange 事件处理程序才能确保跨浏览器兼容性，否则将无法接收readyState属性为0和1的情况</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(xhr.status == <span class="number">200</span>)&#123;</div><div class="line">                <span class="comment">//实际操作</span></div><div class="line">                result.innerHTML += xhr.responseText;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"><span class="comment">//发送请求</span></div><div class="line">xhr.open(<span class="string">'get'</span>,<span class="string">'message.xml'</span>,<span class="literal">true</span>);</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<p>在接收到响应之前还可以调用abort()方法来取消异步请求。<code>xhr.abort()</code> ;调用这个方法后，XHR会停止触发事件，而且也不再允许访问任何与响应有关的对象属性。</p>
 
       
     </div>
@@ -384,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"># CSS</a>
+            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
           
         </div>
       
@@ -397,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/22/原型链/" rel="next" title="原型链">
-                <i class="fa fa-chevron-left"></i> 原型链
+              <a href="/2018/01/24/css相关总结/" rel="next" title="css相关总结">
+                <i class="fa fa-chevron-left"></i> css相关总结
               </a>
             
           </div>
@@ -407,8 +423,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/24/三列布局/" rel="prev" title="几种常见的三列布局">
-                几种常见的三列布局 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/24/CORS/" rel="prev" title="跨域资源共享  CORS">
+                跨域资源共享  CORS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -543,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#css常见小问题"><span class="nav-number">1.</span> <span class="nav-text">css常见小问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、height-100-不起作用。"><span class="nav-number">1.1.</span> <span class="nav-text">1、height:100%不起作用。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、vertical-align一大堆乱七八糟的属性。"><span class="nav-number">1.2.</span> <span class="nav-text">2、vertical-align一大堆乱七八糟的属性。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、float破坏性"><span class="nav-number">1.3.</span> <span class="nav-text">3、float破坏性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、inline-block"><span class="nav-number">1.4.</span> <span class="nav-text">4、inline-block</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XHR发送请求"><span class="nav-number">1.</span> <span class="nav-text">XHR发送请求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#XHR接收响应"><span class="nav-number">2.</span> <span class="nav-text">XHR接收响应</span></a></li></ol></div>
             
 
           </div>
