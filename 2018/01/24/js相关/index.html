@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/24/js相关/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="平时的一些总结">
-<meta property="og:updated_time" content="2018-02-24T13:21:08.384Z">
+<meta property="og:updated_time" content="2018-03-01T07:07:28.512Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js相关总结">
 <meta name="twitter:description" content="平时的一些总结">
@@ -199,7 +199,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -209,7 +209,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -219,7 +219,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -293,7 +293,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-24T00:00:00+08:00">
                 2018-01-24
@@ -314,7 +314,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -363,6 +363,7 @@
 <h1 id="commonJS和AMD-CMD"><a href="#commonJS和AMD-CMD" class="headerlink" title="commonJS和AMD/CMD"></a>commonJS和AMD/CMD</h1><p>js模块化的三个规范：<code>CommonJS</code>，<code>AMD</code>，<code>CMD</code>。<br>CommonJS定义的模块分为：<code>require</code>、<code>export</code>、<code>module</code>. 但<code>require</code>加载模块是同步的，必须等模块加载出来才能执行后面的操作，这在服务器端是完全可行的，因为所有模块都存在本地硬盘，可以同步加载完成，加载时间是硬盘读取时间。但在浏览器端，因为模块都存在服务器，加载时间取决于网速，可能要等很长时间，浏览器会处于“假死”状态。<br>于是就诞生了<code>AMD</code>（异步模块定义），采用异步加载模块，模块加载不影响后面语句的运行，所有依赖这个模块的语句都放在回调函数中。AMD也采用<code>require()</code>，但不同于<code>CommonJS</code>，它采用<code>require([module], callback)</code>;相比于<code>CommonJS</code>，适合浏览器端。</p>
 <h1 id="null、undefined、undeclared的区别，怎么检测"><a href="#null、undefined、undeclared的区别，怎么检测" class="headerlink" title="null、undefined、undeclared的区别，怎么检测"></a>null、undefined、undeclared的区别，怎么检测</h1><p><code>Undeclared</code>是js语法错误，表示变量没有声明，js无法找到对应的上下文。<br><code>Undefined</code>表示一个变量没有被声明，或者被声明了没有被赋值。如果一个函数没有返回任何值则默认返回undefined。<br><code>Null</code>是一个表示“没有值”的值。<br><code>null</code>可以自动转为0，undefined转换成数值是NaN。<br><code>undefined</code>不是一个有效的json，而<code>null</code>是。<br><code>undefined</code>的<code>typeof</code>是undefined。<code>null</code>的<code>typeof</code>是object。<br>判断一个变量是否是<code>undefined</code>：<code>typeof variable ===”undefined”。</code><br>判断一个变量是否是<code>null</code>：<code>variable === null</code></p>
 <h1 id="什么是闭包，如何使用，为什么要使用？"><a href="#什么是闭包，如何使用，为什么要使用？" class="headerlink" title="什么是闭包，如何使用，为什么要使用？"></a>什么是闭包，如何使用，为什么要使用？</h1><p>闭包是指有权访问另一个函数作用域中的变量的函数。<br>创建闭包的方式是在一个函数内返回另一个函数。<br>闭包的作用：1、可以读取函数内部的变量。2、让变量的值始终保存在内存中，不会被自动清除。</p>
+<h1 id="JSONP和AJAX的区别联系"><a href="#JSONP和AJAX的区别联系" class="headerlink" title="JSONP和AJAX的区别联系"></a>JSONP和AJAX的区别联系</h1><p>ajax的核心是通过xmlHttpRequest获取非本页内容<br>jsonp的核心是动态添加script标签调用服务器提供的js脚本（后缀.json)</p>
 
       
     </div>
@@ -393,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/20/module/" rel="next" title="ES6之module">
-                <i class="fa fa-chevron-left"></i> ES6之module
+              <a href="/2018/01/24/css相关总结/" rel="next" title="css相关总结">
+                <i class="fa fa-chevron-left"></i> css相关总结
               </a>
             
           </div>
@@ -403,8 +404,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/24/css相关总结/" rel="prev" title="css相关总结">
-                css相关总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/22/Ajax与XHR对象/" rel="prev" title="Ajax与XHR对象">
+                Ajax与XHR对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -459,10 +460,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -482,8 +483,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -493,8 +494,8 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Kategorien</span>
               </a>
             </div>
           
@@ -504,8 +505,8 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -539,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件代理"><span class="nav-number">1.</span> <span class="nav-text">事件代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS中的this是怎么工作的"><span class="nav-number">2.</span> <span class="nav-text">JS中的this是怎么工作的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS原型继承的原理"><span class="nav-number">3.</span> <span class="nav-text">JS原型继承的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commonJS和AMD-CMD"><span class="nav-number">4.</span> <span class="nav-text">commonJS和AMD/CMD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null、undefined、undeclared的区别，怎么检测"><span class="nav-number">5.</span> <span class="nav-text">null、undefined、undeclared的区别，怎么检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是闭包，如何使用，为什么要使用？"><span class="nav-number">6.</span> <span class="nav-text">什么是闭包，如何使用，为什么要使用？</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件代理"><span class="nav-number">1.</span> <span class="nav-text">事件代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS中的this是怎么工作的"><span class="nav-number">2.</span> <span class="nav-text">JS中的this是怎么工作的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS原型继承的原理"><span class="nav-number">3.</span> <span class="nav-text">JS原型继承的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#commonJS和AMD-CMD"><span class="nav-number">4.</span> <span class="nav-text">commonJS和AMD/CMD</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#null、undefined、undeclared的区别，怎么检测"><span class="nav-number">5.</span> <span class="nav-text">null、undefined、undeclared的区别，怎么检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是闭包，如何使用，为什么要使用？"><span class="nav-number">6.</span> <span class="nav-text">什么是闭包，如何使用，为什么要使用？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSONP和AJAX的区别联系"><span class="nav-number">7.</span> <span class="nav-text">JSONP和AJAX的区别联系</span></a></li></ol></div>
             
 
           </div>
@@ -571,7 +572,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

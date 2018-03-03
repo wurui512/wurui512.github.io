@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javaScript," />
+  <meta name="keywords" content="HTML," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
-<meta name="keywords" content="javaScript">
+<meta name="description" content="总结的一些平时见到的零碎的小知识点。">
+<meta name="keywords" content="HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6之module">
-<meta property="og:url" content="http://yoursite.com/2017/12/20/module/index.html">
+<meta property="og:title" content="HTML相关总结">
+<meta property="og:url" content="http://yoursite.com/2018/02/27/HTML相关总结/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
-<meta property="og:updated_time" content="2017-12-21T12:46:08.000Z">
+<meta property="og:description" content="总结的一些平时见到的零碎的小知识点。">
+<meta property="og:updated_time" content="2018-02-27T07:58:23.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之module">
-<meta name="twitter:description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
+<meta name="twitter:title" content="HTML相关总结">
+<meta name="twitter:description" content="总结的一些平时见到的零碎的小知识点。">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/20/module/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/27/HTML相关总结/"/>
 
 
 
 
 
-  <title>ES6之module | Hexo</title>
+  <title>HTML相关总结 | Hexo</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/20/module/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/HTML相关总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6之module</h1>
+          <h1 class="post-title" itemprop="name headline">HTML相关总结</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T00:00:00+08:00">
-                2017-12-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T00:00:00+08:00">
+                2018-02-27
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">javaScript</span>
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
                   </a>
                 </span>
 
@@ -355,21 +355,18 @@
       
 
       
-        <p>JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。<br>ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。<br><a id="more"></a></p>
-<h2 id="ES6-模块与-CommonJS-模块的差异"><a href="#ES6-模块与-CommonJS-模块的差异" class="headerlink" title="ES6 模块与 CommonJS 模块的差异"></a>ES6 模块与 CommonJS 模块的差异</h2><h3 id="CommonJS-模块是运行时加载，ES6-模块是编译时输出接口"><a href="#CommonJS-模块是运行时加载，ES6-模块是编译时输出接口" class="headerlink" title="CommonJS 模块是运行时加载，ES6 模块是编译时输出接口"></a>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</h3><p>require是CommonJS语法的内容。下面举例，require的用法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  counter: counter,</div><div class="line">  incCounter: incCounter,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// CommonJS模块</span></div><div class="line"><span class="keyword">let</span> &#123; stat, exists, readFile &#125; = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="keyword">let</span> _fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">let</span> stat = _fs.stat;</div><div class="line"><span class="keyword">let</span> exists = _fs.exists;</div><div class="line"><span class="keyword">let</span> readfile = _fs.readfile;</div></pre></td></tr></table></figure>
-<p>上面代码的实质是整体加载<code>fs</code>模块（即加载<code>fs</code>的所有方法），生成一个对象（<code>_fs</code>），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。  </p>
-<p>ES6 模块不是对象，而是通过<code>export</code>命令显式指定输出的代码，再通过<code>import</code>命令输入。</p>
-<p>即 ES6 可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。</p>
-<h3 id="CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。"><a href="#CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。" class="headerlink" title="CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。"></a>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</h3><p>CommonJS 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。请看下面这个模块文件<code>lib.js</code>的例子。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  counter: counter,</div><div class="line">  incCounter: incCounter,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>上面代码输出内部变量<code>counter</code>和改写这个变量的内部方法<code>incCounter</code>。然后，在<code>main.js</code>里面加载这个模块。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">var</span> mod = <span class="built_in">require</span>(<span class="string">'./lib'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(mod.counter);  <span class="comment">// 3</span></div><div class="line">mod.incCounter();</div><div class="line"><span class="built_in">console</span>.log(mod.counter); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
-<p>上面代码说明，<code>lib.js</code>模块加载以后，它的内部变化就影响不到输出的<code>mod.counter</code>了。</p>
-<p>ES6 的<code>import</code>有点像 <code>Unix</code> 系统的“符号连接”，原始值变了，<code>import</code>加载的值也会跟着变。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">let</span> counter = <span class="number">3</span>;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">import</span> &#123; counter, incCounter &#125; <span class="keyword">from</span> <span class="string">'./lib'</span>;</div><div class="line"><span class="built_in">console</span>.log(counter); <span class="comment">// 3</span></div><div class="line">incCounter();</div><div class="line"><span class="built_in">console</span>.log(counter); <span class="comment">// 4</span></div></pre></td></tr></table></figure>
-<p>上面代码说明，<code>ES6</code> 模块输入的变量<code>counter</code>是活的，完全反应其所在模块<code>lib.js</code>内部的变化。</p>
+        <p>总结的一些平时见到的零碎的小知识点。</p>
+<a id="more"></a>
+<h1 id="doctype"><a href="#doctype" class="headerlink" title="doctype"></a>doctype</h1><p>DOCTYPE是 document type（文档类型）的简写，用来说明你用的XHTML或HTML是什么版本。<br>DOCTYPE声明必须放在每一个XHTML文档最顶部，在所有代码和标识之上。<br>HTML 4.01 规定了三种不同的<code>&lt;!DOCTYPE&gt;</code> 声明，分别是：Strict、Transitional 和 Frameset。<br>HTML5 中仅规定了一种：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="标准模式和怪异模式"><a href="#标准模式和怪异模式" class="headerlink" title="标准模式和怪异模式"></a>标准模式和怪异模式</h1><p>1、<strong>标准模式</strong>：浏览器按W3C标准解析执行代码。<br>① 如果XHTML文档包含完整的DOCTYPE，那么它一般以标准模式呈现；<br>② 包含严格dtd的doctype和包含过渡dtd和URI的doctype常常导致页面以标准模式呈现；</p>
+<p>2、<strong>怪异模式</strong>：兼容老页面。使用浏览器自己的方式解析执行代码，因为不同浏览器解析执行的方式不一样，所以我们称之为怪异模式。<br>① 不存在doctype或形式不正确会导致怪异模式；<br>② 有过渡/框架dtd没有URI会导致页面以怪异模式呈现；<br>③ IE中，如果doctype声明在xml之后，会导致怪异模式。</p>
+<p>3、<strong>近标准模式</strong>：与标准模式一致，除了在处理下面这种情况时：<br>如果一个块级元素除了空白文本（空格，tab等字符）外再无其它内容，则它的高度按0处理；如果有子元素，则它的高度不能比子元素大，无论它的font-size多大。</p>
+<h1 id="HTML和XHTML区别"><a href="#HTML和XHTML区别" class="headerlink" title="HTML和XHTML区别"></a>HTML和XHTML区别</h1><p>xhtml是用xml的规则重新规范html，xhtml是xml的一个子集，所以具备了xml的特性。<br>html就是超文本标记语言</p>
+<h1 id="application-xhtml-xml"><a href="#application-xhtml-xml" class="headerlink" title="application/xhtml+xml"></a>application/xhtml+xml</h1><p>到底“application/XHTML+xml”和“text/html”这2种MIME类型会带来什么不同呢？  </p>
+<p>“application/XHTML+xml”这个MIME类型的文档必须遵循严格的错误处理规定（德拉科式的错误处理），即如果XHTML页面上哪怕只有一个错误，web浏览器也别无选择，只能停止继续处理并给用户报错信息；  </p>
+<p>“text/html”这个MIME类型的文档则不用遵循严格的错误处理规定，，浏览器对HTML是宽容的。即使你忘记了在html页面中写上<code>&lt;title&gt;</code>，浏览器还是会正确显示页面，虽然<code>&lt;title&gt;</code>对于html页面来说是必须的。正因为格式错误的HTML仍然可以在浏览器中显示，所以导致开发者们写出了很多错误的页面。要修复这么错误代价太大，于是开发者们选择了基本忽略<code>application/XHTML+xml</code>这个MIME类型，将页面代码的语法升级到了XHTML，但是还是用<code>text/html</code>的MIME类型发布。  </p>
+<p>这正是XHTML 1.0留下的漏洞：“使用XHTML的语法，但是页面以“<code>text/html</code>”的MIME类型发布”。导致页面并不会引发XML的德拉科式错误处理，而是被一个宽容的HTML解析器处理，悄无声息地忽略掉任何代码错误。所以很多网页声称是XHTML 1.0的，但只有很少数网页声称自己是XHTML 1.1（或者XHTML 2.0）的。</p>
 
       
     </div>
@@ -387,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
           
         </div>
       
@@ -400,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/25/flex布局/" rel="next" title="flex布局">
-                <i class="fa fa-chevron-left"></i> flex布局
+              <a href="/2018/02/24/CORS/" rel="next" title="跨域资源共享  CORS">
+                <i class="fa fa-chevron-left"></i> 跨域资源共享  CORS
               </a>
             
           </div>
@@ -410,8 +407,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/24/css相关总结/" rel="prev" title="css相关总结">
-                css相关总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/27/cookie sessionStorage和localStorage /" rel="prev" title="cookie、sessionStorage和localStorage">
+                cookie、sessionStorage和localStorage <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -546,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-模块与-CommonJS-模块的差异"><span class="nav-number">1.</span> <span class="nav-text">ES6 模块与 CommonJS 模块的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS-模块是运行时加载，ES6-模块是编译时输出接口"><span class="nav-number">1.1.</span> <span class="nav-text">CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。"><span class="nav-number">1.2.</span> <span class="nav-text">CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#doctype"><span class="nav-number">1.</span> <span class="nav-text">doctype</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标准模式和怪异模式"><span class="nav-number">2.</span> <span class="nav-text">标准模式和怪异模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML和XHTML区别"><span class="nav-number">3.</span> <span class="nav-text">HTML和XHTML区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#application-xhtml-xml"><span class="nav-number">4.</span> <span class="nav-text">application/xhtml+xml</span></a></li></ol></div>
             
 
           </div>

@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/24/CORS/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。 它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。">
-<meta property="og:updated_time" content="2018-02-25T08:27:57.439Z">
+<meta property="og:updated_time" content="2018-02-26T02:55:46.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域资源共享  CORS">
 <meta name="twitter:description" content="CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。 它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。">
@@ -199,7 +199,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -209,7 +209,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -219,7 +219,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -293,7 +293,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-24T00:00:00+08:00">
                 2018-02-24
@@ -314,7 +314,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -358,6 +358,33 @@
         <p>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。</p>
 <p>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。</p>
 <a id="more"></a>
+<h1 id="IE对CORS的实现"><a href="#IE对CORS的实现" class="headerlink" title="IE对CORS的实现"></a>IE对CORS的实现</h1><p>IE8引进了XDR类型（XDomainRequest），与XHR类似，但能实现安全可靠的跨域访问。下面是XDR和XHR的一些不同之处：  </p>
+<blockquote>
+<ol>
+<li>cookie不会随请求发送，也不会随响应返回。  </li>
+<li>只能设置请求头部信息中的Content-Type字段。  </li>
+<li>不能访问响应头部信息。  </li>
+<li>只支持GET和POST请求。  </li>
+</ol>
+</blockquote>
+<h1 id="其他浏览器对CORS的实现"><a href="#其他浏览器对CORS的实现" class="headerlink" title="其他浏览器对CORS的实现"></a>其他浏览器对CORS的实现</h1><p>对于简单请求，浏览器直接发出CORS请求。具体来说，就是在头信息之中，增加一个Origin字段。  </p>
+<p>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。</p>
+<p>非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。</p>
+<p>浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的XMLHttpRequest请求，否则就报错。</p>
+<p>一旦服务器通过了”预检”请求，以后每次浏览器正常的CORS请求，就都跟简单请求一样，会有一个Origin头信息字段。服务器的回应，也都会有一个Access-Control-Allow-Origin头信息字段。</p>
+<p>与IE中的XDR对象不同，通过跨域XHR对象可以访问status和statusText属性，而且还支持同步请求。跨域XHR对象也有些限制，但为了安全这些限制还是必需的。以下就是这些限制：  </p>
+<blockquote>
+<ol>
+<li>不能使用setRequestHeader()设置自定义头部。  </li>
+<li>不能发送和接收cookie。  </li>
+<li>调用getAllResponseHeaders()方法总会返回空字符串。   </li>
+</ol>
+</blockquote>
+<h1 id="withCredentials-属性"><a href="#withCredentials-属性" class="headerlink" title="withCredentials 属性"></a>withCredentials 属性</h1><p>CORS请求默认不发送Cookie和HTTP认证信息。如果要把Cookie发到服务器，一方面要服务器同意，指定<code>Access-Control-Allow-Credentials</code>字段。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Credentials: <span class="literal">true</span></div></pre></td></tr></table></figure>
+<p>另一方面，开发者必须在AJAX请求中打开<code>withCredentials</code>属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">xhr.withCredentials = <span class="literal">true</span>;</div></pre></td></tr></table></figure>
+<p>否则，即使服务器同意发送Cookie，浏览器也不会发送。或者，服务器要求设置Cookie，浏览器也不会处理。</p>
 
       
     </div>
@@ -388,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/22/Ajax与XHR对象/" rel="next" title="Ajax与XHR对象">
-                <i class="fa fa-chevron-left"></i> Ajax与XHR对象
+              <a href="/2018/02/24/Comet/" rel="next" title="Comet 服务器推送">
+                <i class="fa fa-chevron-left"></i> Comet 服务器推送
               </a>
             
           </div>
@@ -397,6 +424,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/27/HTML相关总结/" rel="prev" title="HTML相关总结">
+                HTML相关总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -448,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -464,8 +504,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -475,8 +515,8 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Kategorien</span>
               </a>
             </div>
           
@@ -486,8 +526,8 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -511,6 +551,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IE对CORS的实现"><span class="nav-number">1.</span> <span class="nav-text">IE对CORS的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他浏览器对CORS的实现"><span class="nav-number">2.</span> <span class="nav-text">其他浏览器对CORS的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#withCredentials-属性"><span class="nav-number">3.</span> <span class="nav-text">withCredentials 属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -537,7 +593,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

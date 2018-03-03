@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
+<meta name="description" content="Comet指的一种更高级的Ajax技术（也被称为“服务器推送”）。Ajax是一种从页面向服务器请求数据的技术，而Comet则是一种服务器向页面推送数据的技术。Comet能够让信息近乎实时地被推送到页面上，非常适合处理体育比赛的分数和股票报价。 有两种实现Comet的方式：长轮询和流。长轮询是传统轮询（也称为短轮询）的一个翻版，即浏览器定时向服务器发送请求，看有没有更新的数据。">
 <meta name="keywords" content="javaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6之module">
-<meta property="og:url" content="http://yoursite.com/2017/12/20/module/index.html">
+<meta property="og:title" content="Comet 服务器推送">
+<meta property="og:url" content="http://yoursite.com/2018/02/24/Comet/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
-<meta property="og:updated_time" content="2017-12-21T12:46:08.000Z">
+<meta property="og:description" content="Comet指的一种更高级的Ajax技术（也被称为“服务器推送”）。Ajax是一种从页面向服务器请求数据的技术，而Comet则是一种服务器向页面推送数据的技术。Comet能够让信息近乎实时地被推送到页面上，非常适合处理体育比赛的分数和股票报价。 有两种实现Comet的方式：长轮询和流。长轮询是传统轮询（也称为短轮询）的一个翻版，即浏览器定时向服务器发送请求，看有没有更新的数据。">
+<meta property="og:updated_time" content="2018-02-26T12:51:42.442Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6之module">
-<meta name="twitter:description" content="JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。">
+<meta name="twitter:title" content="Comet 服务器推送">
+<meta name="twitter:description" content="Comet指的一种更高级的Ajax技术（也被称为“服务器推送”）。Ajax是一种从页面向服务器请求数据的技术，而Comet则是一种服务器向页面推送数据的技术。Comet能够让信息近乎实时地被推送到页面上，非常适合处理体育比赛的分数和股票报价。 有两种实现Comet的方式：长轮询和流。长轮询是传统轮询（也称为短轮询）的一个翻版，即浏览器定时向服务器发送请求，看有没有更新的数据。">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/12/20/module/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/24/Comet/"/>
 
 
 
 
 
-  <title>ES6之module | Hexo</title>
+  <title>Comet 服务器推送 | Hexo</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/20/module/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/24/Comet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6之module</h1>
+          <h1 class="post-title" itemprop="name headline">Comet 服务器推送</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-20T00:00:00+08:00">
-                2017-12-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-24T00:00:00+08:00">
+                2018-02-24
               </time>
             
 
@@ -355,21 +355,24 @@
       
 
       
-        <p>JS一直都没有模块（module）体系，在ES6之前，常用的模块加载方案有CommonJS和AMD。<br>ES6模块的设计思想是尽量静态化。使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东西。<br><a id="more"></a></p>
-<h2 id="ES6-模块与-CommonJS-模块的差异"><a href="#ES6-模块与-CommonJS-模块的差异" class="headerlink" title="ES6 模块与 CommonJS 模块的差异"></a>ES6 模块与 CommonJS 模块的差异</h2><h3 id="CommonJS-模块是运行时加载，ES6-模块是编译时输出接口"><a href="#CommonJS-模块是运行时加载，ES6-模块是编译时输出接口" class="headerlink" title="CommonJS 模块是运行时加载，ES6 模块是编译时输出接口"></a>CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</h3><p>require是CommonJS语法的内容。下面举例，require的用法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  counter: counter,</div><div class="line">  incCounter: incCounter,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// CommonJS模块</span></div><div class="line"><span class="keyword">let</span> &#123; stat, exists, readFile &#125; = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="keyword">let</span> _fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">let</span> stat = _fs.stat;</div><div class="line"><span class="keyword">let</span> exists = _fs.exists;</div><div class="line"><span class="keyword">let</span> readfile = _fs.readfile;</div></pre></td></tr></table></figure>
-<p>上面代码的实质是整体加载<code>fs</code>模块（即加载<code>fs</code>的所有方法），生成一个对象（<code>_fs</code>），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。  </p>
-<p>ES6 模块不是对象，而是通过<code>export</code>命令显式指定输出的代码，再通过<code>import</code>命令输入。</p>
-<p>即 ES6 可以在编译时就完成模块加载，效率要比 CommonJS 模块的加载方式高。</p>
-<h3 id="CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。"><a href="#CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。" class="headerlink" title="CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。"></a>CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</h3><p>CommonJS 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。请看下面这个模块文件<code>lib.js</code>的例子。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">var</span> counter = <span class="number">3</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  counter: counter,</div><div class="line">  incCounter: incCounter,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<p>上面代码输出内部变量<code>counter</code>和改写这个变量的内部方法<code>incCounter</code>。然后，在<code>main.js</code>里面加载这个模块。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">var</span> mod = <span class="built_in">require</span>(<span class="string">'./lib'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(mod.counter);  <span class="comment">// 3</span></div><div class="line">mod.incCounter();</div><div class="line"><span class="built_in">console</span>.log(mod.counter); <span class="comment">// 3</span></div></pre></td></tr></table></figure>
-<p>上面代码说明，<code>lib.js</code>模块加载以后，它的内部变化就影响不到输出的<code>mod.counter</code>了。</p>
-<p>ES6 的<code>import</code>有点像 <code>Unix</code> 系统的“符号连接”，原始值变了，<code>import</code>加载的值也会跟着变。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// lib.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">let</span> counter = <span class="number">3</span>;</div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">incCounter</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  counter++;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">import</span> &#123; counter, incCounter &#125; <span class="keyword">from</span> <span class="string">'./lib'</span>;</div><div class="line"><span class="built_in">console</span>.log(counter); <span class="comment">// 3</span></div><div class="line">incCounter();</div><div class="line"><span class="built_in">console</span>.log(counter); <span class="comment">// 4</span></div></pre></td></tr></table></figure>
-<p>上面代码说明，<code>ES6</code> 模块输入的变量<code>counter</code>是活的，完全反应其所在模块<code>lib.js</code>内部的变化。</p>
+        <p>Comet指的一种更高级的Ajax技术（也被称为“服务器推送”）。Ajax是一种从页面向服务器请求数据的技术，而Comet则是一种服务器向页面推送数据的技术。Comet能够让信息近乎实时地被推送到页面上，非常适合处理体育比赛的分数和股票报价。</p>
+<p>有两种实现Comet的方式：长轮询和流。长轮询是传统轮询（也称为短轮询）的一个翻版，即浏览器定时向服务器发送请求，看有没有更新的数据。  </p>
+<a id="more"></a>
+<h1 id="长轮询"><a href="#长轮询" class="headerlink" title="长轮询"></a>长轮询</h1><p>长轮询把短轮询颠倒了一下。页面发起一个到服务器的请求，然后服务器一直保持连接打开，直到有数据可发送。发送完数据之后，浏览器关闭连接，随即又发起一个到服务器的新请求。这一过程在页面打开期间一直持续不断。</p>
+<p>短轮询是服务器立即发送响应，无论数据是否有效，而长轮询是等待发送响应。轮询的优势是所有浏览器都支持，因为使用XHR对象和setTimeout()就能实现。  </p>
+<h1 id="HTTP流"><a href="#HTTP流" class="headerlink" title="HTTP流"></a>HTTP流</h1><p>流不同于轮询，因为它在页面的整个生命周期内只使用一个HTTP连接。具体来说，就是浏览器像服务器发送一个请求，而服务器保持打开，然后周期性地向浏览器发送数据。<br>通过侦听readyStatechange事件及检测readyState的值是否为3，就可以利用XHR对象实现HTTP流。当readyState值变为3时，responseText属性中就会保存接收到的所有数据。此时，就需要比较此前接收到的数据，决定从什么位置开始取得最新的数据。</p>
+<h1 id="SSE"><a href="#SSE" class="headerlink" title="SSE"></a>SSE</h1><p>SSE（server-sent events，服务器发送事件）是围绕只读Comet交互推出的API或者模式<br>SSE API用于创建到服务器的单向连接，服务器通过这个连接可以发送任意数量的数据。SSE支持短轮询、长轮询和HTTP流，而且能在断开连接时自动确定何时连接。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>获得服务器更新<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">if</span>(<span class="keyword">typeof</span>(EventSource)!==<span class="string">"undefined"</span>)</span></div><div class="line"><span class="undefined">  &#123;</span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> source=<span class="keyword">new</span> EventSource(<span class="string">"/example/html5/demo_sse.php"</span>);</span></div><div class="line"><span class="javascript">  source.onmessage=<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span></span></div><div class="line"><span class="undefined">    &#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML+=event.data + <span class="string">"&lt;br /&gt;"</span>;</span></div><div class="line"><span class="undefined">    &#125;;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="javascript"><span class="keyword">else</span></span></div><div class="line"><span class="undefined">  &#123;</span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML=<span class="string">"Sorry, your browser does not support server-sent events..."</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="Web-Sockets"><a href="#Web-Sockets" class="headerlink" title="Web Sockets"></a>Web Sockets</h1><p>WebSocket是HTML5开始提供的一种浏览器与服务器间进行全双工通讯的网络技术。依靠这种技术可以实现客户端和服务器端的长连接，双向实时通信。<br>在取得服务器响应后，建立的连接会使用HTTP升级从HTTP协议交换为Web Socket协议。也就是说，使用标准的HTTP服务器无法实现Web Sockets，只有支持这种协议的专门服务器才能正常工作。</p>
+<h1 id="SSE-amp-WebSocket"><a href="#SSE-amp-WebSocket" class="headerlink" title="SSE&amp;WebSocket"></a>SSE&amp;WebSocket</h1><p>SSE与WebSocket有相似功能，都是用来建立浏览器与服务器之间的通信渠道。两者的区别在于：</p>
+<ul>
+<li>WebSocket是全双工通道，可以双向通信，功能更强；SSE是单向通道，只能服务器向浏览器端发送。</li>
+<li>WebSocket是一个新的协议，需要服务器端支持；SSE则是部署在 HTTP协议之上的，现有的服务器软件都支持。</li>
+<li>SSE是一个轻量级协议，相对简单；WebSocket是一种较重的协议，相对复杂。</li>
+<li>SSE默认支持断线重连，WebSocket则需要额外部署。</li>
+<li>SSE支持自定义发送的数据类型。</li>
+<li>SSE不支持CORS.   参数url就是服务器网址，必须与当前网页的网址在同一个网域（domain），而且协议和端口都必须相同。</li>
+</ul>
 
       
     </div>
@@ -400,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/25/flex布局/" rel="next" title="flex布局">
-                <i class="fa fa-chevron-left"></i> flex布局
+              <a href="/2018/02/22/Ajax与XHR对象/" rel="next" title="Ajax与XHR对象">
+                <i class="fa fa-chevron-left"></i> Ajax与XHR对象
               </a>
             
           </div>
@@ -410,8 +413,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/24/css相关总结/" rel="prev" title="css相关总结">
-                css相关总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/24/CORS/" rel="prev" title="跨域资源共享  CORS">
+                跨域资源共享  CORS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -546,7 +549,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-模块与-CommonJS-模块的差异"><span class="nav-number">1.</span> <span class="nav-text">ES6 模块与 CommonJS 模块的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS-模块是运行时加载，ES6-模块是编译时输出接口"><span class="nav-number">1.1.</span> <span class="nav-text">CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CommonJS-模块输出的是一个值的拷贝，ES6-模块输出的是值的引用。"><span class="nav-number">1.2.</span> <span class="nav-text">CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#长轮询"><span class="nav-number">1.</span> <span class="nav-text">长轮询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP流"><span class="nav-number">2.</span> <span class="nav-text">HTTP流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSE"><span class="nav-number">3.</span> <span class="nav-text">SSE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-Sockets"><span class="nav-number">4.</span> <span class="nav-text">Web Sockets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SSE-amp-WebSocket"><span class="nav-number">5.</span> <span class="nav-text">SSE&WebSocket</span></a></li></ol></div>
             
 
           </div>
