@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML," />
+  <meta name="keywords" content="javaScript," />
 
 
 
@@ -94,17 +94,19 @@
 
 
 
-<meta name="description" content="平时的一些总结">
-<meta name="keywords" content="HTML">
+<meta name="description" content="在讨论页面重绘、回流之前。要先再回顾一下页面呈现流程。">
+<meta name="keywords" content="javaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cookie、sessionStorage和localStorage">
-<meta property="og:url" content="http://yoursite.com/2018/02/27/cookie sessionStorage和localStorage /index.html">
+<meta property="og:title" content="重绘和回流">
+<meta property="og:url" content="http://yoursite.com/2018/03/04/重塑和回流/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="平时的一些总结">
-<meta property="og:updated_time" content="2018-03-03T06:11:01.712Z">
+<meta property="og:description" content="在讨论页面重绘、回流之前。要先再回顾一下页面呈现流程。">
+<meta property="og:image" content="http://oy4etwyhs.bkt.clouddn.com/18-3-5/54772736.jpg">
+<meta property="og:updated_time" content="2018-03-05T02:50:42.568Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cookie、sessionStorage和localStorage">
-<meta name="twitter:description" content="平时的一些总结">
+<meta name="twitter:title" content="重绘和回流">
+<meta name="twitter:description" content="在讨论页面重绘、回流之前。要先再回顾一下页面呈现流程。">
+<meta name="twitter:image" content="http://oy4etwyhs.bkt.clouddn.com/18-3-5/54772736.jpg">
 
 
 
@@ -133,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/27/cookie sessionStorage和localStorage /"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/04/重塑和回流/"/>
 
 
 
 
 
-  <title>cookie、sessionStorage和localStorage | Hexo</title>
+  <title>重绘和回流 | Hexo</title>
   
 
 
@@ -266,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/cookie sessionStorage和localStorage /">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/04/重塑和回流/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -283,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">cookie、sessionStorage和localStorage</h1>
+          <h1 class="post-title" itemprop="name headline">重绘和回流</h1>
         
 
         <div class="post-meta">
@@ -295,8 +297,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T00:00:00+08:00">
-                2018-02-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-04T00:00:00+08:00">
+                2018-03-04
               </time>
             
 
@@ -318,8 +320,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTML/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML</span>
+                  <a href="/categories/javaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">javaScript</span>
                   </a>
                 </span>
 
@@ -355,15 +357,34 @@
       
 
       
-        <p>平时的一些总结</p>
+        <p>在讨论页面重绘、回流之前。要先再回顾一下页面呈现流程。</p>
+<p><img src="http://oy4etwyhs.bkt.clouddn.com/18-3-5/54772736.jpg" alt=""> </p>
 <a id="more"></a>
-<p>相同点：都存储在客户端<br>不同点：<br>1.存储大小  </p>
-<p>cookie数据大小不能超过4k。<br>sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。<br>2.有效时间</p>
-<p>localStorage  存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；<br>sessionStorage   数据在当前浏览器窗口关闭后自动删除。<br>cookie      设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭  </p>
-<ol>
-<li>数据与服务器之间的交互方式   </li>
-</ol>
-<p>cookie的数据会自动的传递到服务器，服务器端也可以写cookie到客户端<br>sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。  </p>
+<p>浏览器解析HTML文件时会“自上而下”加载，并边加载边渲染。与请求外部资源，如图片、css，过程是异步的。解析过程中，浏览器首先会解析HTML文件构建DOM树，然后解析CSS文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上。</p>
+<p>render tree和DOM tree类似，但区别很大。render tree能识别样式，render tree中每个NODE都有自己的style，而且 render tree不包含隐藏的节点 (比如display:none的节点，还有head节点)，因为这些节点不会用于呈现，而且不会影响呈现的，所以就不会包含到 render tree中。注意 visibility:hidden隐藏的元素还是会包含到 render tree中的，因为visibility:hidden 会影响布局(layout)，会占有空间。</p>
+<h1 id="回流与重绘"><a href="#回流与重绘" class="headerlink" title="回流与重绘"></a>回流与重绘</h1><p>当render tree中的一部分（或全部）因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。就称为<strong><em>回流</em></strong>。每个页面至少需要一次回流，就是页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程称为<strong><em>重绘</em></strong>。</p>
+<p>当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，分割，而不会影响布局的，比如background-color。则称为重绘。</p>
+<p>注意：回流必将引起重绘，而重绘不一定会引起回流。</p>
+<p>什么会引发回流：</p>
+<p>当页面布局和几何属性改变时就需要回流。</p>
+<ul>
+<li>添加或删除可见的DOM元素</li>
+<li>元素位置改变</li>
+<li>元素尺寸改变—边距、填充、边框、宽度和高度</li>
+<li>内容改变—比如文本改变或图片大小改变而引起的计算值宽高</li>
+<li>页面渲染初始化</li>
+<li>浏览器窗口尺寸改变—resize事件发生</li>
+<li>激活CSS伪类（比如 ：hover）</li>
+<li>操作class属性</li>
+<li>获取会让浏览器flush队列的属性（如offsetTop/Left/Width/height、scrollTop/Left/Width/Height、clientTop/Left/Width/Height、width、height）</li>
+</ul>
+<h1 id="如何减少回流重绘"><a href="#如何减少回流重绘" class="headerlink" title="如何减少回流重绘"></a>如何减少回流重绘</h1><p>减少回流、重绘其实就是需要减少对render tree的操作（合并多次多DOM和样式的修改），并减少对一些style信息的请求，尽量利用好浏览器的优化策略。</p>
+<ul>
+<li>避免逐项更改样式。最好一次性更改style属性，或者将样式列表定义为class并一次性更改class属性</li>
+<li>避免循环操作DOM。创建一个documentFragment,在它上面应用所有DOM操作，最后再把它添加到window.document.</li>
+<li>避免多次读取offsetLeft等属性。无法避免则将它们缓存到变量</li>
+<li>将复杂的元素绝对定位或者固定定位，使它脱离文档流。否则回流代价十分高。</li>
+</ul>
 
       
     </div>
@@ -381,7 +402,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTML/" rel="tag"># HTML</a>
+            <a href="/tags/javaScript/" rel="tag"># javaScript</a>
           
         </div>
       
@@ -394,8 +415,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/27/HTML相关总结/" rel="next" title="HTML相关总结">
-                <i class="fa fa-chevron-left"></i> HTML相关总结
+              <a href="/2018/03/01/从输入URL到展示页面/" rel="next" title="从输入url到页面展示">
+                <i class="fa fa-chevron-left"></i> 从输入url到页面展示
               </a>
             
           </div>
@@ -403,10 +424,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/28/JSONP/" rel="prev" title="JSONP">
-                JSONP <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -458,8 +475,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -521,6 +547,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#回流与重绘"><span class="nav-number">1.</span> <span class="nav-text">回流与重绘</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何减少回流重绘"><span class="nav-number">2.</span> <span class="nav-text">如何减少回流重绘</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
