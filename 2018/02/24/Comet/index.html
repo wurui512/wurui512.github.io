@@ -199,7 +199,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -209,7 +209,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            Kategorien
           </a>
         </li>
       
@@ -219,7 +219,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -293,7 +293,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-24T00:00:00+08:00">
                 2018-02-24
@@ -314,7 +314,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">in</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -362,7 +362,7 @@
 <p>短轮询是服务器立即发送响应，无论数据是否有效，而长轮询是等待发送响应。轮询的优势是所有浏览器都支持，因为使用XHR对象和setTimeout()就能实现。  </p>
 <h1 id="HTTP流"><a href="#HTTP流" class="headerlink" title="HTTP流"></a>HTTP流</h1><p>流不同于轮询，因为它在页面的整个生命周期内只使用一个HTTP连接。具体来说，就是浏览器像服务器发送一个请求，而服务器保持打开，然后周期性地向浏览器发送数据。<br>通过侦听readyStatechange事件及检测readyState的值是否为3，就可以利用XHR对象实现HTTP流。当readyState值变为3时，responseText属性中就会保存接收到的所有数据。此时，就需要比较此前接收到的数据，决定从什么位置开始取得最新的数据。</p>
 <h1 id="SSE"><a href="#SSE" class="headerlink" title="SSE"></a>SSE</h1><p>SSE（server-sent events，服务器发送事件）是围绕只读Comet交互推出的API或者模式<br>SSE API用于创建到服务器的单向连接，服务器通过这个连接可以发送任意数量的数据。SSE支持短轮询、长轮询和HTTP流，而且能在断开连接时自动确定何时连接。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>获得服务器更新<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">if(typeof(EventSource)!=="undefined")</span></div><div class="line"><span class="undefined">  &#123;</span></div><div class="line"><span class="undefined">  var source=new EventSource("/example/html5/demo_sse.php");</span></div><div class="line"><span class="undefined">  source.onmessage=function(event)</span></div><div class="line"><span class="undefined">    &#123;</span></div><div class="line"><span class="xml">    document.getElementById("result").innerHTML+=event.data + "<span class="tag">&lt;<span class="name">br</span> /&gt;</span>";</span></div><div class="line"><span class="undefined">    &#125;;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined">else</span></div><div class="line"><span class="undefined">  &#123;</span></div><div class="line"><span class="undefined">  document.getElementById("result").innerHTML="Sorry, your browser does not support server-sent events...";</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>获得服务器更新<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"result"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">if</span>(<span class="keyword">typeof</span>(EventSource)!==<span class="string">"undefined"</span>)</span></div><div class="line"><span class="undefined">  &#123;</span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> source=<span class="keyword">new</span> EventSource(<span class="string">"/example/html5/demo_sse.php"</span>);</span></div><div class="line"><span class="javascript">  source.onmessage=<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span></span></div><div class="line"><span class="undefined">    &#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML+=event.data + <span class="string">"&lt;br /&gt;"</span>;</span></div><div class="line"><span class="undefined">    &#125;;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="javascript"><span class="keyword">else</span></span></div><div class="line"><span class="undefined">  &#123;</span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"result"</span>).innerHTML=<span class="string">"Sorry, your browser does not support server-sent events..."</span>;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 <h1 id="Web-Sockets"><a href="#Web-Sockets" class="headerlink" title="Web Sockets"></a>Web Sockets</h1><p>WebSocket是HTML5开始提供的一种浏览器与服务器间进行全双工通讯的网络技术。依靠这种技术可以实现客户端和服务器端的长连接，双向实时通信。<br>在取得服务器响应后，建立的连接会使用HTTP升级从HTTP协议交换为Web Socket协议。也就是说，使用标准的HTTP服务器无法实现Web Sockets，只有支持这种协议的专门服务器才能正常工作。</p>
 <h1 id="SSE-amp-WebSocket"><a href="#SSE-amp-WebSocket" class="headerlink" title="SSE&amp;WebSocket"></a>SSE&amp;WebSocket</h1><p>SSE与WebSocket有相似功能，都是用来建立浏览器与服务器之间的通信渠道。两者的区别在于：</p>
 <ul>
@@ -403,8 +403,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/24/CORS/" rel="next" title="跨域资源共享  CORS">
-                <i class="fa fa-chevron-left"></i> 跨域资源共享  CORS
+              <a href="/2018/02/22/Ajax与XHR对象/" rel="next" title="Ajax与XHR对象">
+                <i class="fa fa-chevron-left"></i> Ajax与XHR对象
               </a>
             
           </div>
@@ -413,8 +413,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/27/HTML相关总结/" rel="prev" title="HTML相关总结">
-                HTML相关总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/24/CORS/" rel="prev" title="跨域资源共享  CORS">
+                跨域资源共享  CORS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -469,10 +469,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -493,7 +493,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -503,8 +503,8 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">categories</span>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Kategorien</span>
               </a>
             </div>
           
@@ -514,8 +514,8 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
@@ -581,7 +581,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
